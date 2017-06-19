@@ -13,13 +13,13 @@ add_library(clickhouse-server
     ReplicasStatusHandler.cpp)
 target_link_libraries(clickhouse-server daemon clickhouse_storages_system clickhouse_functions clickhouse_aggregate_functions clickhouse_table_functions)
 
-add_library(clickhouse-local LocalServer.cpp)
+add_library(clickhouse-local STATIC LocalServer.cpp)
 target_link_libraries(clickhouse-local dbms clickhouse_functions clickhouse_aggregate_functions clickhouse_table_functions)
 
-add_library(clickhouse-extract-from-config ExtractFromConfig.cpp)
+add_library(clickhouse-extract-from-config STATIC ExtractFromConfig.cpp)
 target_link_libraries(clickhouse-extract-from-config dbms)
 
-add_library (clickhouse-client Client.cpp)
+add_library (clickhouse-client STATIC Client.cpp)
 target_link_libraries (clickhouse-client dbms clickhouse_aggregate_functions ${LINE_EDITING_LIBS} ${Boost_PROGRAM_OPTIONS_LIBRARY})
 install (FILES clickhouse-client.xml DESTINATION ${CLICKHOUSE_ETC_DIR}/clickhouse-client COMPONENT clickhouse-client RENAME config.xml)
 

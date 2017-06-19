@@ -24,4 +24,4 @@ list(REMOVE_ITEM clickhouse_aggregate_functions_headers
     AggregateFunctionCount.h
 )
 
-add_library(clickhouse_aggregate_functions ${clickhouse_aggregate_functions_sources})
+add_library(clickhouse_aggregate_functions STATIC ${clickhouse_aggregate_functions_sources})

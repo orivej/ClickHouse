@@ -3,7 +3,7 @@ include_directories (${ClickHouse_SOURCE_DIR}/libs/libcommon/include)
 
 include(${ClickHouse_SOURCE_DIR}/cmake/dbms_include.cmake)
 
-add_library(zkutil
+add_library(zkutil STATIC
     src/ZooKeeper.cpp
     src/Lock.cpp
     src/SingleBarrier.cpp
